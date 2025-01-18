@@ -1,18 +1,16 @@
+import cs from './home.module.css'
 
 
 
-
-export 
-function Home() {
+export function Home() {
   return (
-    <>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet,
-        purus vitae eleifend tristique, lorem magna volutpat orci, et vehicula
-        erat erat nec elit. Aenean posuere nunc ac cursus facilisis. Aenean vel
-        porta turpis, ut iaculis justo.
-      </p>
-    </>
+    <div className={cs.container}>
+    <div className={cs.imgContainer}>
+      <img src="./4.jpg" width={"100%"} height={"600vh"} style={{objectFit:'cover'}} />
+      <div className={cs.imgOverlay}>
+        <div className={cs.content}>ابدأ رحلتك معنا</div>
+      </div>
+    </div>
+    </div>
   )
 }

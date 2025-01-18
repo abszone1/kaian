@@ -7,30 +7,9 @@ export function Contact() {
       <>
         <h1>Contact</h1>
         <p>
-          Aliquam iaculis a nisi sed ornare. Sed venenatis tellus vel consequat
-          congue. In bibendum vestibulum orci et feugiat.
+          call me if you can
         </p>
-        <section>
-      <header>
-        <FormattedMessage
-          defaultMessage="Control Panel"
-          description="title of control panel section"
-        />
-      </header>
-      <ul>
-        <li>
-          <button>
-            <FormattedMessage
-              defaultMessage="Delete user {name}"
-              description="Delete button"
-              values={{
-                name: name,
-              }}
-            />
-          </button>
-        </li>
-      </ul>
-    </section>
+      
       </>
     )
   }

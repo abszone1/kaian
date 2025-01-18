@@ -7,18 +7,21 @@ import {motion,AnimatePresence} from 'motion/react'
 import cs from './App.module.css'
 import { Header } from './component/header'
 
-import foto from './assets/react.svg'
 import { Button } from './component/button'
+import { useIntl } from 'react-intl'
 
-const tabs = [
-  { path: '/', name: 'Home' },
-  { path: '/about', name: 'About' },
-  { path: '/contact', name: 'Contact' },
-]
- 
 export function App() {
   const location = useLocation()
   const outlet = useOutlet()
+  const intl = useIntl()
+
+  const items = [
+    {path:'/',name:intl.formatMessage({defaultMessage:'Home',description:'Home page'})},
+    {path:'/about',name:intl.formatMessage({defaultMessage:'About',description:'About page'})},
+    {path:'/destinations',name:intl.formatMessage({defaultMessage:'Destinations',description:'Destinations page'})},
+    {path:'/offers',name:intl.formatMessage({defaultMessage:'Offers',description:'Offers page'})},
+    {path:'/contact',name:intl.formatMessage({defaultMessage:'Contact',description:'Contact page'})},
+  ]
 
   return (
       <div className={cs.container}>
@@ -36,11 +39,11 @@ export function App() {
               start={<div className={cs.logo}>KAIAN</div>} 
               end={<div className={cs.headerEnd}>
                 <Button type='basic' color='semiWhite' shape={26} iconName='wireframe' text='English' />
-                <Button type='basic' color='semiWhite' shape={26} iconName='call-fill' text='Contact' />
+                <Button type='basic' color='semiWhite' shape={26} iconName='call-fill' 
+                  text={intl.formatMessage({defaultMessage:"Contact",description:"Contact button"})} />
                 </div>}
-              menuItems={tabs} />
+              menuItems={items} />
             {outlet}
-            <img src={foto} height={500} width={500} />
           </motion.div>
         </AnimatePresence>
       

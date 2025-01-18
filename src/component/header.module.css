@@ -7,6 +7,7 @@
     color: #fff;
     position: sticky;
     top: 0;
+    z-index: 1000;
     animation: bgChange .2s  alternate forwards;
     animation-timeline: scroll();
     animation-range: 0px 101px;
@@ -17,7 +18,8 @@
     height: 400px;
     width: 100%; 
     position: absolute;
-    z-index: -1;
+    z-index: 200;
+
 }
 
 
@@ -69,11 +71,13 @@
     all:  unset;
     cursor: pointer;
 
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 400;
+    user-select: none;
 
 }
 
 .active{
-    color: #0ab7e2;
+    color: #50ff67;
+    font-weight: 500;
 }

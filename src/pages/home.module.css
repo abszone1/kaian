@@ -1,0 +1,26 @@
+.container{
+    margin-top: -65px;
+}
+
+
+.imgContainer{
+    position: relative;
+}
+
+.imgOverlay{
+    position: absolute;
+    inset: 0;
+    background-color: aquamarine;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    visibility: visible;
+    font-size: 5rem;
+    font-weight: 500;
+    color: white;
+    z-index: 300;
+}
