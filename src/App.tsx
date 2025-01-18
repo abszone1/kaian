@@ -1,12 +1,10 @@
 import {
-  NavLink,
   useLocation,
   useOutlet,
 
 } from 'react-router'
 import {motion,AnimatePresence} from 'motion/react'
 import cs from './App.module.css'
-import { createContext } from 'react'
 import { Header } from './component/header'
 
 import foto from './assets/react.svg'
@@ -51,23 +49,23 @@ export function App() {
   )
 }
 
-const AppContext = createContext({})
+// const AppContext = createContext({})
 
-type AppData = {
-  locale: string
-  title: string
-  dir: 'rtl' | 'ltr'
-  msgs: object
+// type AppData = {
+//   locale: string
+//   title: string
+//   dir: 'rtl' | 'ltr'
+//   msgs: object
 
-}
+// }
 
-function AppProvider(){
+// function AppProvider(){
 
-  const appData : AppData ={
-    locale: "ar",
-    title: "home",
-    dir: 'rtl',
-    msgs:{}
-  }
+//   const appData : AppData ={
+//     locale: "ar",
+//     title: "home",
+//     dir: 'rtl',
+//     msgs:{}
+//   }
 
-}
+// }
