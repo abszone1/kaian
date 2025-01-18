@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {
+  NavLink,
+  useLocation,
+  useOutlet,
 
-function App() {
-  const [count, setCount] = useState(0)
+} from 'react-router'
+import {motion,AnimatePresence} from 'motion/react'
+import cs from './App.module.css'
+import { createContext } from 'react'
+import { Header } from './component/header'
+
+import foto from './assets/react.svg'
+import { Button } from './component/button'
+
+const tabs = [
+  { path: '/', name: 'Home' },
+  { path: '/about', name: 'About' },
+  { path: '/contact', name: 'Contact' },
+]
+ 
+export function App() {
+  const location = useLocation()
+  const outlet = useOutlet()
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className={cs.container}>
+        <AnimatePresence mode='wait'>
+          <motion.div
+            key={location.pathname? location.pathname : "empty"}
+            initial={{origin:'center',scale: 1.1,opacity:0}}
+            animate={{origin:'center',scale: 1,opacity:1}}
+            exit={{origin:'center',scale: 1.1, opacity: 0}}
+            
+            transition={{duration: .2}}
+            className={cs.page}
+          >
+            <Header 
+              start={<div className={cs.logo}>KAIAN</div>} 
+              end={<div className={cs.headerEnd}>
+                <Button type='basic' color='semiWhite' shape={26} iconName='wireframe' text='English' />
+                <Button type='basic' color='semiWhite' shape={26} iconName='call-fill' text='Contact' />
+                </div>}
+              menuItems={tabs} />
+            {outlet}
+            <img src={foto} height={500} width={500} />
+          </motion.div>
+        </AnimatePresence>
+      
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      
   )
 }
 
-export default App
+const AppContext = createContext({})
+
+type AppData = {
+  locale: string
+  title: string
+  dir: 'rtl' | 'ltr'
+  msgs: object
+
+}
+
+function AppProvider(){
+
+  const appData : AppData ={
+    locale: "ar",
+    title: "home",
+    dir: 'rtl',
+    msgs:{}
+  }
+
+}

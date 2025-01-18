@@ -1,0 +1,21 @@
+
+
+
+.icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    vertical-align: middle;
+    fill: var(--icon-fill-color, currentcolor);
+    stroke: var(--icon-stroke-color, none);
+    width: var(--icon-width, 24px);
+    height: var(--icon-height, 24px);
+    animation: var(--icon-animation);
+    margin-inline-start: var(--icon-margin-inline-start);
+    margin-inline-end: var(--icon-margin-inline-end);
+    margin-block-start: var(--icon-margin-block-start);
+    margin-block-end: var(--icon-margin-block-end);
+    padding: var(--icon-padding);
+}
+

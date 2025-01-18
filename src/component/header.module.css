@@ -1,0 +1,79 @@
+
+
+
+.container{
+    container: header / inline-size;
+    width: 100%;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    animation: bgChange .2s  alternate forwards;
+    animation-timeline: scroll();
+    animation-range: 0px 101px;
+}
+
+.shadow{
+    background: linear-gradient(to bottom, rgba(128, 142, 252, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    height: 400px;
+    width: 100%; 
+    position: absolute;
+    z-index: -1;
+}
+
+
+@container header (width > 900px) {
+    .first{
+        color: rgb(255, 255, 255);
+    }
+   
+}
+
+@keyframes bgChange {
+    from {
+        background: transparent;
+    }
+
+    to {
+        background: rgba(128, 142, 252, 1);
+    }
+}
+
+.first{
+    display: flex;
+    height: 65px;
+    align-items: center;
+
+}
+.second{
+    display: flex;
+}
+
+
+.start{
+    
+    display: flex;
+    align-items: center;
+}
+.center{
+    flex: 1 1 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.end{
+    min-width: 3rem;
+}
+
+.itemA{
+    all:  unset;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.active{
+    color: #0ab7e2;
+}

@@ -1,0 +1,29 @@
+
+.container {
+  flex: 1 1 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  
+}
+.logo {
+  user-select: none;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: cursive;
+  padding-inline: 1rem;
+}
+
+.headerEnd{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1rem;
+}
+
+.page{
+  height: 900px;
+}
