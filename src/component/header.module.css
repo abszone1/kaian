@@ -13,6 +13,7 @@
     animation-range: 0px 101px;
 }
 
+
 .shadow{
     background: linear-gradient(to bottom, rgba(128, 142, 252, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     height: 400px;
@@ -23,12 +24,6 @@
 }
 
 
-@container header (width > 900px) {
-    .first{
-        color: rgb(255, 255, 255);
-    }
-   
-}
 
 @keyframes bgChange {
     from {
@@ -44,6 +39,7 @@
     display: flex;
     height: 65px;
     align-items: center;
+    justify-content: space-between;
 
 }
 .second{
@@ -64,9 +60,22 @@
     justify-content: center;
 }
 .end{
-    min-width: 3rem;
+    display: flex;
 }
 
+
+.minEnd{
+    display: none;
+}
+
+.second{
+    flex: 1 1 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding-block-end: .5rem;
+}
 .itemA{
     all:  unset;
     cursor: pointer;
@@ -80,4 +89,22 @@
 .active{
     color: #50ff67;
     font-weight: 500;
+}
+
+
+
+@container header (width < 800px) {
+    .first{
+        color: #50ff67;
+    }
+    .center{
+        display: none;
+    }
+    .minEnd{
+        display: flex;
+    }
+    .end{
+        display: none;
+    }
+   
 }

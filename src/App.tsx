@@ -37,11 +37,17 @@ export function App() {
           >
             <Header 
               start={<div className={cs.logo}>KAIAN</div>} 
+              // center={true}
               end={<div className={cs.headerEnd}>
-                <Button type='basic' color='semiWhite' shape={26} iconName='wireframe' text='English' />
+                <Button type='basic' color='semiWhite' shape={26} text='العربية' />
+                <Button type='basic' color='semiWhite' shape={26} text='EGP' />              
                 <Button type='basic' color='semiWhite' shape={26} iconName='call-fill' 
-                  text={intl.formatMessage({defaultMessage:"Contact",description:"Contact button"})} />
+                  text={intl.formatMessage({defaultMessage:"Call us",description:"call us button"})} />
                 </div>}
+              minEnd={<div className={cs.headerEnd}>
+                <Button type='basic' color='semiWhite' shape={26} text='العربية' />
+                <Button type='basic' color='semiWhite' shape={26} text='EGP' />              
+              </div>}
               menuItems={items} />
             {outlet}
           </motion.div>

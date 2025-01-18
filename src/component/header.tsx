@@ -13,6 +13,7 @@ type Props = {
     start?: ReactNode
     center?: ReactNode
     end?: ReactNode
+    minEnd?: ReactNode
     menuItems?: Item[]
 
 }
@@ -21,6 +22,7 @@ export function Header({
     menuItems,
     center,
     end,
+    minEnd,
     start
 }:Props){
 
@@ -46,6 +48,9 @@ export function Header({
                     </div>
                     <div className={cs.end}>
                         {end}
+                    </div>
+                    <div className={cs.minEnd}>
+                        {minEnd}
                     </div>
                 </div>
                 <div className={cs.second}>

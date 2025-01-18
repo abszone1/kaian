@@ -6,7 +6,7 @@ export function Home() {
   return (
     <div className={cs.container}>
     <div className={cs.imgContainer}>
-      <img src="./4.jpg" width={"100%"} height={"600vh"} style={{objectFit:'cover'}} />
+      <img className={cs.img} src="./4.jpg" width={"100%"} height={"100%"} />
       <div className={cs.imgOverlay}>
         <div className={cs.content}>ابدأ رحلتك معنا</div>
       </div>
